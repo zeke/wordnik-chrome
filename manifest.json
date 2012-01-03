@@ -1,0 +1,30 @@
+{
+  "name": "Wordnik",
+  "version": "0.1",
+  "description": "Take wordnik with you around the web.",
+	"homepage_url": "http://wordnik.com",
+  "permissions": [
+		"tabs",
+		"contextMenus",
+    "notifications",
+    "http://local.wordnik.com/",
+    "http://www.sniphr.com/"
+  ],
+	"icons": {
+		"16": "images/icon_16.png",
+		"48": "images/icon_48.png",
+		"128": "images/icon_128.png"
+	},
+  "background_page" : "background.html",
+  "browser_action": {
+    "default_icon": "images/icon_public.png",
+    "default_title": "Wordnik Options",
+    "default_popup": "options.html"
+  },
+	"options_page": "options.html",
+  "content_scripts": [ {
+     "all_frames": true,
+     "js": ["javascripts/config.js", "javascripts/common.js", "javascripts/jquery-1.6.4.min.js", "javascripts/background.js", "javascripts/content.js"],
+     "matches": [ "<all_urls>" ]
+  } ]
+}
